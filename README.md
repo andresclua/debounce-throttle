@@ -1,25 +1,22 @@
 
 Throttle and debounce functions.
 
-
 ```
 ### JS Setup
 2 - Import the package
 ```sh
-npm install @andresclua/collapse
+npm install @andresclua/debounce-throttle
 ```
 3 -  the package
 ```sh
-import Collapse from '@andresclua/collapse';
-new Collapse()  
+import {tf_debounce,tf_throttle} from '@andresclua/debounce-throttle';
 ```
 4 - Your Html should look like this
 
 ```sh
-<a href="#" class="b--btn-a" data-ds-element="collapse" data-collapse-id="collapse-x" data-target-class="b--collapse-a--is-active" data-self-class="b--btn-a--is-active">Trigger Element</a>
-<div class="b--collapse-a" id="collapse-x">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero obcaecati incidunt quod labore illum sint odit! Saepe eligendi laboriosam earum a molestias, totam praesentium vero! Provident ad iure facilis veniam.</p>
-</div>
+element.addEventListener('input',tf_debounce((e)=>{
+    this.debounceState.innerHTML = e.target.value; 
+},1000));
 ```
 
 ### For Nuxt
