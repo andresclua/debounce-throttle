@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Debounce - Throttle - Andrés Clúa</title>
+</head>
+<body>
+   <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <h1>Debounce Vs Throttle</h1>
+                <hr>
+                <h4 class="mb-3">Throttling enforces a maximum number of times a function can be called over time. As in “execute this function at most once every 100 milliseconds.</h4>
+                <h4 class="mb-3">Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called. As in “execute this function only if 100 milliseconds have passed without it being called.”</h4>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Write on the input</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <hr>
+                <h3>Default <span id="default"></span></h3>  
+                <h3>Debounce <span id="debounce"></span></h3>  
+                <h3>Throttle <span id="throttle"></span></h3>  
+                
+            </form>
+        </div>
+    </div>
+   </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
