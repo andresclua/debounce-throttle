@@ -21,7 +21,7 @@ class Page{
 
         this.input.addEventListener('input',tf_throttle((e)=>{
             this.throttleState.innerHTML = e.target.value; 
-        },100));
+        },1000));
     }
 }
 export default Page;
