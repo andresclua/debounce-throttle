@@ -24,14 +24,6 @@ input.addEventListener('input', throttledInputHandler);
 
 
 
-setTimeout(() => {
-  // To cancel the debounce effect
-debouncedInputHandler.cancel();
-
-// To cancel the throttle effect
-throttledInputHandler.cancel();
-
-},3000)
 
 
 
