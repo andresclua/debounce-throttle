@@ -1,0 +1,58 @@
+$measure: 8px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media screen and (max-width: 768px){
+        max-width: 95%;
+    }
+}
+h1{
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: $measure*2;
+    margin-top: $measure*2;
+
+}
+h2{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: $measure*2;
+}
+h4{
+    font-size: 1.5rem;
+    color: #333;
+}
+ul{
+    padding: 0;
+    margin-bottom: $measure*4;
+    list-style-position: inside;
+    li{margin-bottom: $measure;}
+}
+p{
+    margin-bottom: $measure*2;
+}
+
+.sample{
+    background-color: #fff;
+    padding: $measure*2;
+    margin-bottom: $measure*2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+   
+}

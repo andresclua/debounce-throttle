@@ -4,20 +4,59 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Vite App</title>
   </head>
   <body>
+    <div class="container">
+
+   
+    <h1>debounce and throttle</h1>
+    <h2>In JavaScript, both debounce and throttle are techniques used to control the rate at which a function is executed. This is particularly useful in situations where a function might be called frequently, such as during window resizing, scrolling, or keypress events. Choosing between debounce and throttle depends on the specific behavior you want to achieve.</h2>
     
-    <h6 class="mb-3">Throttling enforces a maximum number of times a function can be called over time. As in “execute this function at most once every 100 milliseconds.”</h6>
-                <h6 class="mb-3">Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called. As in “execute this function only if 100 milliseconds have passed without it being called.”</h6>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Write on the input</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <hr>
-                <h3>Default <span id="default"></span></h3>  
-                <h3>Debounce <span id="debounce"></span></h3>  
-                <h3>Throttle <span id="throttle"></span></h3> 
+    <h2>Use Debounce When:</h2>
+    <ul>
+      <li>
+        <strong>You want to delay the function execution until after some event has stopped happening for a predetermined amount of time. </strong>For example, debounce is useful for making AJAX calls that should only happen after a user has stopped typing in a search input field. This way, the function execution is postponed until the user has paused typing for a specified duration.
+      </li>
+      <li>
+        <strong>You need to ensure that a function is not called too frequently and only want it to trigger after some quiet time.</strong> It effectively reduces the number of times a function is called over time and is particularly useful in avoiding unnecessary processing or API calls.
+      </li>
+    </ul>
+
+    <h2>Use Throttle When:</h2>
+    <ul>
+      <li>
+        <strong>You want to ensure that a function is executed at most once every specified period of time, no matter how many times the triggering event is fired.</strong> This is useful in situations like scrolling, where you might want to check or update the position of elements on the screen, but doing so on every scroll event would be excessive and potentially harm performance.
+      </li>
+      <li>
+       <strong> You need to maintain a regular rate of function execution over time,</strong> even while the triggering event is continuously occurring. Throttle ensures that the function is executed at a consistent interval, which is ideal for updating user interface elements or handling animation in response to user input or other ongoing events.
+      </li>
+    </ul>
+
+    <h2>Key Differences</h2>
+    <ul>
+      <li>Execution Timing: Debounce postpones the function execution until a certain amount of time has passed since the last event trigger. Throttle, on the other hand, guarantees the execution of the function at regular intervals during the event.
+      </li>
+      <li>Use Cases: Use debounce for events that you only want to handle after some idle time (like user input). Use throttle for events that happen continuously (like scrolling) but you only want to handle at a controlled rate.
+      </li>
+    </ul>
+    <p>In summary, debounce is best when you want to limit the execution of a function to after an event has stopped occurring, ensuring it only runs once after a pause. Throttle is best when you want to ensure a function is executed periodically and at a controlled rate during continuous event firing.</p>
+
+    <div class="sample">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Write on the input</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <h4>Default <span id="default"></span></h4>  
+      <h4>Debounce <span id="debounce"></span></h4>  
+      <h4>Throttle <span id="throttle"></span></h4> 
+    </div>
+  </div>
+
     <script type="module" src="./src/index.js"></script>
   </body>
 </html>

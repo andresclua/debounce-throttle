@@ -9,11 +9,11 @@ var throttleState = document.getElementById('throttle');
 
 const debouncedInputHandler = debounce((e) => {
   debounceState.innerHTML = e.target.value;
-}, 1000);
+}, 500);
 
 const throttledInputHandler = throttle((e) => {
   throttleState.innerHTML = e.target.value;
-}, 1000);
+}, 500);
 
 
 input.addEventListener('input', e =>{
