@@ -1,21 +1,27 @@
-const r = (n, s) => {
+const r = (c, o) => {
   let e;
-  return function() {
-    const t = this, l = arguments;
+  const t = function() {
+    const n = this, l = arguments;
     clearTimeout(e), e = setTimeout(() => {
-      n.apply(t, l);
-    }, s);
+      c.apply(n, l);
+    }, o);
   };
-}, c = (n, s, e = !1) => {
-  let t = null, l = !0;
-  return function() {
-    const u = e && l, o = () => {
-      n.apply(this, arguments), t = null;
+  return t.cancel = () => {
+    clearTimeout(e);
+  }, t;
+}, i = (c, o, e = !1) => {
+  let t = null, n = !0;
+  const l = function() {
+    const s = e && n, u = () => {
+      c.apply(this, arguments), t = null;
     };
-    u && (l = !1, o()), t || (t = setTimeout(o, s));
+    s && (n = !1, u()), t || (t = setTimeout(u, o));
   };
+  return l.cancel = () => {
+    clearTimeout(t), t = null, n = !0;
+  }, l;
 };
 export {
   r as debounce,
-  c as throttle
+  i as throttle
 };
