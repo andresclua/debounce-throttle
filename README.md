@@ -35,7 +35,12 @@ input.addEventListener('input', debouncedInputHandler);
 input.addEventListener('input', throttledInputHandler);
 ```
 
-#### `Debounce`
+## Setup with CDN
+
+### `Codepen Example`
+[Check out the CodePen!](https://codepen.io/andresclua/pen/LYaMgJN)
+
+### `Debounce`
 
 Debounce allows you to delay a function's execution until a specified time has elapsed since the last time it was invoked. This is particularly useful for handling events that occur in rapid succession, ensuring that the function is only called once after the last invocation.
 
