@@ -1,30 +1,38 @@
+import {debounce,throttle} from './debounce-trottle.js';
 
-import {tf_debounce,tf_throttle} from './help';
+
+var input = document.querySelector('input');
+var defaultState = document.getElementById('default');
+var debounceState = document.getElementById('debounce');
+var throttleState = document.getElementById('throttle');
 
 
-class Page{
-    constructor(){
-        this.input = document.querySelector('input');
-        this.defaultState = document.getElementById('default');
-        this.debounceState = document.getElementById('debounce');
-        this.throttleState = document.getElementById('throttle');
-        this.events()
-    }
-    events(){ 
- 
-        this.input.addEventListener('input', e =>{
-            this.defaultState.innerHTML = e.target.value; 
-        })
-        this.input.addEventListener('input',tf_debounce((e)=>{
-            this.debounceState.innerHTML = e.target.value; 
-        },1000));
+const debouncedInputHandler = debounce((e) => {
+  debounceState.innerHTML = e.target.value;
+}, 1000);
 
-        this.input.addEventListener('input',tf_throttle((e)=>{
-            this.throttleState.innerHTML = e.target.value; 
-        },1000));
-    }
-}
-export default Page;
+const throttledInputHandler = throttle((e) => {
+  throttleState.innerHTML = e.target.value;
+}, 1000);
 
-new Page()
+
+input.addEventListener('input', e =>{
+  defaultState.innerHTML = e.target.value; 
+})
+input.addEventListener('input', debouncedInputHandler);
+input.addEventListener('input', throttledInputHandler);
+
+
+
+setTimeout(() => {
+  // To cancel the debounce effect
+debouncedInputHandler.cancel();
+
+// To cancel the throttle effect
+throttledInputHandler.cancel();
+
+},3000)
+
+
+
 

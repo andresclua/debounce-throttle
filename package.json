@@ -1,32 +1,35 @@
 {
   "name": "@andresclua/debounce-throttle",
-  "version": "0.0.82",
-  "description": "debounce-throttle",
-  "main": "",
+  "private": false,
+  "version": "0.0.4",
+  "type": "module",
+  "main": "./dist/debounce-throttle.umd.cjs",
+  "module": "./dist/debounce-throttle.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/debounce-throttle.es.js",
+      "require": "./dist/debounce-throttle.umd.cjs"
+    }
+  },
+  "author": "andresclua",
   "scripts": {
-    "webpack": "webpack --watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andresclua/debounce-throttle.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/andresclua/debounce-throttle/issues"
-  },
-  "homepage": "https://github.com/andresclua/debounce-throttle#readme",
-  "devDependencies": {
-    "babel-loader": "^8.2.2",
-    "webpack": "^5.37.1",
-    "webpack-cli": "^4.7.0"
-  },
-  "dependencies": {
-    "@andresclua/jsutil": "^2.0.4",
-    "@babel/core": "^7.14.3"
   },
   "keywords": [
     "debounce",
     "throttle"
-  ]
+  ],
+  "license": "MIT"
 }
