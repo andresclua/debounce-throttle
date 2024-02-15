@@ -1,6 +1,6 @@
 # Debounce Throttle -  
 
-![hero](https://raw.githubusercontent.com/andresclua/attachflow/37b5c456d41a996655012778f8f9d4e86b43c372/public/cover.png)
+![hero](https://raw.githubusercontent.com/andresclua/debounce-throttle/main/public/debounce-cover.png)
 
 debounce-throttle is a lightweight, no-dependency JavaScript utility library for rate-limiting function executions. It offers both debounce and throttle functions that are essential for optimizing performance for events that fire frequently, such as window resizing, scrolling, or keypresses in web applications.
 
