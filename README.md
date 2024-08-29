@@ -6,12 +6,12 @@ debounce-throttle is a lightweight, no-dependency JavaScript utility library for
 
 
 
-## Setup for with in your favourite bundler(vite,webpack)
+## Setup from command line
 ``` js
 npm i @andresculua/debounce-throttle
 ```
 ``` js
-import  {debounce,thorttle} from '@andresculua/debounce-throttle';
+import  {debounce,thorttle} from '@andresclua/debounce-throttle';
 
 var input = document.querySelector('input');
 var defaultState = document.getElementById('default');

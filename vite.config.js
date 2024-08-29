@@ -3,7 +3,7 @@ export default{
     build: {
         lib: {
             entry: [
-                resolve(__dirname,'src/debounce-trottle.js'),
+                resolve(__dirname,'src/debounce-throttle.js'),
             ],
             name: 'dt',
             formats: ["es", "umd"],
